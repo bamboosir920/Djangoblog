@@ -1,0 +1,72 @@
+<!-- 定义导航栏 -->
+<nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <div class="headers">
+  
+      <!-- 导航栏商标 -->
+      <div class="index">
+        <a class="navbar-brand" href="../../../" id="index_a">我的博客</a>
+      </div>
+      <!-- 导航入口 -->
+
+      <div class="link">
+        <div class="link_box">
+          <a class="link_box_a" href="{% url 'article:article_list' %}">文章</a>
+        </div>
+        <div class="link_box">
+          <a class="link_box_a" href="{% url 'project:project_list' %}">项目</a>
+        </div>
+        <div class="link_box">
+          <a class="link_box_a" href="{% url 'scholar:scholar_list' %}">论文</a>
+        </div>
+        <div class="link_box" id="link_box_1">
+          <a class="link_box_a" href="{% url 'life:life_list' %}">我的经历</a>
+        </div>
+        <div class="link_box">
+          <a class="link_box_a" href="/myself">关于我</a>
+        </div>
+       
+          <ul class="navbar-nav">
+            <!-- 条目 -->
+            {% comment %} <li class="nav-item">
+              <a class="nav-link" href="{% url 'article:article_list' %}">文章</a>
+            </li> {% endcomment %}
+            {% comment %} <li class="nav-item">
+              <a class="nav-link" href="{% url 'project:project_list' %}">项目</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'scholar:scholar_list' %}">论文</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'life:life_list' %}">我的经历</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/myself">关于我</a>
+            </li> {% endcomment %}
+            <!-- Django的 if 模板语句 -->
+            {% if user.is_authenticated %}
+            <!-- 如果用户已经登录，则显示用户名下拉框 -->
+            <li class="nav-item dropdown">
+                <a class="link_box_a dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ user.username }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href='{% url "userprofile:edit" user.id %}'>个人信息</a>
+                  <a class="dropdown-item" href='{% url "userprofile:logout" %}'>退出登录</a>
+                </div>
+            </li>
+            <!-- 如果用户未登录，则显示 “登录” -->
+            {% else %}
+            <li class="nav-item">
+                <a class="link_box_a" href="{% url 'userprofile:login' %}">登录</a>
+            </li>                    
+            <!-- if 语句在这里结束 -->
+            {% endif %}
+          </ul>
+
+      </div>
+  
+    </div>
+  </nav>

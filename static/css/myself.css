@@ -1,0 +1,167 @@
+html,body
+    {
+        width: 100%;
+        height:100%;
+        background-image: url(https://s1.ax1x.com/2020/04/30/JqO9mt.jpg);
+        background-repeat:no-repeat;
+        background-size: cover;
+    }
+    .body
+    {
+    width:100%;
+    height:94%;
+    display:flex
+    }
+    .mainbox
+    {
+    padding:2%;
+    width:60%;
+    margin:0 5% 0;
+    height:100%;
+    
+    font-family:"Times New Roman","楷体";
+
+    font-size:25px; 
+    float:left;
+    background:white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    .rightbox
+    {
+    margin-top:5%;
+    background:white;
+    float:left;
+    height:500px;
+    width:25%;
+    border-radius:5%;
+    border:1px solid;
+    float:left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-align: center;
+    }
+    .box
+    {
+        margin:1% 0 0;
+        width:100%;
+        float:left;
+    }
+    .LinkCard
+    {
+        padding:2%;
+        width:200px;
+        height:200px;
+        margin:2.5% 2.5% 0;
+        float:left;
+        border:1px solid;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border-radius:5%;
+        text-align: center;
+    }
+#name{
+    smargin-top:10%;
+    font-size:30px;
+    font-family:'华文行楷';
+    float:left;
+    width:100%; 
+}
+#word
+{
+    margin-top:5%;
+    font-size:20px;
+    font-family:'楷体';
+    float:left;
+    width:100%
+}
+@media only screen and (max-width: 1300px){ 
+        .mainbox
+        {
+        padding:2%;
+        width:73%;
+        margin:0 0.5% 0;
+        height:100%;
+        font-size:25px; 
+        }
+        .rightbox
+        {
+        height:500px;
+        width:25%;
+        margin: 0 0.5% 0;
+        margin-top: 5%;
+        }
+        
+        }
+@media only screen and (max-width: 1100px){ 
+    .mainbox
+        {
+        padding:2%;
+        width:73%;
+        margin:0 0.5% 0;
+        height:100%;
+        font-size:22px;
+        }
+        .rightbox
+        {
+        height:300px;
+        width:25%;
+        margin: 0 0.5% 0;
+        margin-top: 5%;
+        }
+        .LinkCard
+        {
+        padding:2%;
+        width:150px;
+        height:150px;
+        margin:2.5% 2.5% 0;
+        }   
+}
+@media only screen and (max-width: 769px){ 
+    .mainbox
+    {
+    padding:2%;
+    width:73%;
+    margin:0 0.5% 0;
+    height:100%;
+    font-size:18px; 
+    }
+    .rightbox
+    {
+    height:300px;
+    width:25%;
+    margin: 0 0.5% 0;
+    margin-top: 5%;
+    }
+    .LinkCard
+    {
+    padding:2%;
+    width:120px;
+    height:120px;
+    font-size:18px; 
+    margin:2.5% 2.5% 0;
+    }   
+}
+@media only screen and (max-width: 616px){ 
+    #h1{
+        font-size: 25px;
+    }
+    .mainbox
+    {
+    padding:1%;
+    width:99%;
+    margin:0 0.5% 0;
+    height:100%;
+    font-size:16px; 
+    }
+    .rightbox
+    {
+    width: 0%;
+    visibility: hidden
+    }
+    .LinkCard
+    {
+    padding:2%;
+    width:110px;
+    height:110px;
+    font-size:17px; 
+    margin:0.5% 0.5% 0;
+    }   
+}

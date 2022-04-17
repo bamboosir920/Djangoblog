@@ -1,0 +1,363 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #333;
+    font-family: "Nunito Sans", sans-serif;
+          
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-attachment: fixed;
+    background-image: url("https://s1.ax1x.com/2022/04/11/LEjUYV.jpg");
+    background-size: cover;
+
+  }
+
+  .body_box
+  {
+    width: 80%;
+    margin: 0 10% 0;
+    height: 100%;
+    float:left;
+    background-color:rgba(0,0,0,0.3)
+  }
+
+  .body_head_box
+  {
+    width:100%;
+    /* 激活搜索栏后为11% */
+    height:5%;
+    max-height: 140px;
+    float:left;
+    
+  }
+
+  .body_head_select_box
+  {
+    width:100%;
+    height:70%;
+    max-height: 70px;
+    display: flex;
+    background: #2D6E7C;
+  }
+  .body_head_select_order_box
+  {
+      width:10%;
+      min-width: 100px;
+      height:100%;
+      font-weight: 600;
+    /*flex 布局*/
+	display: flex;
+	/*实现垂直居中*/
+	align-items: center;
+	/*实现水平居中*/
+    justify-content: center;
+    margin: 0  0 0 5px;
+    border-radius: 5px;
+
+  }
+#body_head_select_order_box_1{
+    background: #9CDE80;
+  }
+#body_head_select_order_box_2{
+    background: #50BC8F;
+  }
+  .body_head_select_none_box
+  {
+      width:70%;
+      min-width: 100px;
+      height:100%;
+      /*flex 布局*/
+	display: flex;
+	/*实现垂直居中*/
+	align-items: center;
+	/*实现水平居中*/
+    justify-content: center;
+
+  }
+  .body_head_select_search_box
+  {
+      width:10%;
+      min-width: 500px;
+      height:100%;
+    /*flex 布局*/
+	display: flex;
+	/*实现垂直居中*/
+	align-items: center;
+	/*实现水平居中*/
+    justify-content: center;
+  }
+  .body_head_select_search_btn
+  {
+    background: #F9F871
+  }
+
+  .body_main_box
+  {
+    width:100%;
+        /* 激活搜索栏后为72% */
+    height:80%;
+    /*flex 布局*/
+	/* display: flex; */
+	/*实现垂直居中*/
+	/* align-items: center; */
+	/*实现水平居中*/
+    /* justify-content: center; */
+  }
+
+  .body_footer_box
+  {
+    width:100%;
+    height:15%;
+        /*flex 布局*/
+	display: flex;
+	/*实现垂直居中*/
+	align-items: center;
+	/*实现水平居中*/
+    justify-content: center;
+  }
+  
+  .heading {
+    width: 100%;
+    margin-left: 1rem;
+    font-weight: 600;
+    font-size: 1.618rem;
+    text-transform: uppercase;
+    letter-spacing: .1ch;
+    line-height: 1;
+    padding-bottom: .5em;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .heading:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #1a9be6, #1a57e6);
+    bottom: 0;
+  }
+  
+  .description {
+    width: 100%;
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .card {
+    color: inherit;
+    cursor: pointer;
+    width: calc(33% - 2rem);
+    min-width: calc(33% - 2rem);
+    height: 300px;
+    min-height: 300px;
+    perspective: 1000px;
+
+    margin: 1rem;
+    float:left;
+  }
+  
+  .front,
+  .back {
+    display: flex;
+    border-radius: 6px;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: ease-in-out 600ms;
+  }
+  
+  .front {
+    background-size: cover;
+    padding: 2rem;
+    font-size: 1.618rem;
+    font-weight: 600;
+    color: #fff;
+    overflow: hidden;
+    font-family: Poppins, sans-serif;
+  }
+  .front:before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a9be6, #1a57e6);
+    opacity: .15;
+    z-index: -1;
+  }
+  .card:hover .front {
+    transform: rotateY(180deg);
+  }
+  .card:nth-child(even):hover .front {
+    transform: rotateY(-180deg);
+  }
+  
+  .back {
+    /* background: #fff; */
+    transform: rotateY(-180deg);
+    padding: 0 2em;
+  }
+  .card:hover .back {
+    transform: rotateY(0deg);
+  }
+  .card:nth-child(even) .back {
+    transform: rotateY(180deg);
+  }
+  .card:nth-child(even):hover .back {
+    transform: rotateY(0deg);
+  }
+  
+  .button {
+    transform: translateZ(40px);
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-weight: bold;
+    color: #fff;
+    padding: .5em 1em;
+    border-radius: 100px;
+    font: inherit;
+    background: linear-gradient(135deg, #1a9be6, #1a57e6);
+    border: none;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 300ms ease;
+  }
+  .button:before {
+    transition: 300ms ease;
+    position: absolute;
+    display: block;
+    content: '';
+    transform: translateZ(-40px);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    border-radius: 100px;
+    left: 10px;
+    top: 16px;
+    box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+    background-color: rgba(26, 87, 230, 0.25);
+  }
+  .button:hover {
+    transform: translateZ(55px);
+  }
+  .button:hover:before {
+    transform: translateZ(-55px);
+  }
+  .button:active {
+    transform: translateZ(20px);
+  }
+  .button:active:before {
+    transform: translateZ(-20px);
+    top: 12px;
+  }
+  .step_link_box
+  {
+    width:50px;
+    margin:0 5px 0 0;
+    height:50px;
+    border-radius:10px;
+    font-size:20px;
+    font-weight:500;
+    text-decoration: none;
+    float:left;
+    text-align:center;
+    /* display:table; */
+    color:black;
+        /* flex 布局
+	display: flex;
+	/*实现垂直居中*/
+	/* align-items: center; */
+	/*实现水平居中*/
+    /* justify-content: center;  */
+  }
+  #step_link_box_1
+  {
+    background:#FF6F91
+  }
+  #step_link_box_2
+  {
+    background:#FF9671
+  }
+  #step_link_box_3
+  {
+    color:red;
+    background:#FFC75F
+  }
+  a{
+    color:black;
+    font-size:20px;
+    text-decoration: none;
+  }
+  a:hover{
+      color:black;
+      text-decoration: none;
+  }
+  @media only screen and (max-width: 800px){ 
+    html,body
+    {
+      height: 200%;
+    }
+      .card {
+        width: calc(50% - 2rem);
+      }
+      
+      .body_box
+      {
+        width: 95%;
+        
+        margin: 0 2.5% 0;
+      }
+      .body_head_box
+      {
+
+        height:2%;
+        
+      }
+      }
+@media only screen and (max-width: 500px){ 
+  html,body
+  {
+    height: 100%;
+  }
+  .card {
+      width:  98%;
+      margin: 1%;
+    }
+    .body_box
+    {
+      width: 100%;
+      height: 100%;
+      margin: 0 0% 0;
+
+    }
+    .body_head_box
+    {
+
+      height:1%;
+      
+    }
+  
+  }

@@ -1,0 +1,43 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    文章详情
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+
+<!-- 文章详情 -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <!-- 标题及作者 -->
+            <h1 class="mt-4 mb-4">{{ scholar.title }}</h1>
+            <div class="col-12 alert alert-success">
+                <div>
+                    作者：{{ scholar.author }}
+                </div>
+                <div>
+                    浏览：{{ scholar.total_views }}
+                </div>
+            </div>
+            <!-- 文章正文 -->
+            <div class="col-12">
+                <p>{{ scholar.body|safe}}</p>
+            </div>
+        </div> 
+        <!-- 目录 -->
+        {% comment %} <div class="col-3 mt-4">
+            <h4><strong>目录</strong></h4>
+            <hr>
+            <div>
+                {{ toc|safe }}
+            </div>
+        </div> {% endcomment %}
+    </div>
+</div>
+
+{% endblock content %}

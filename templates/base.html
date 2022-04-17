@@ -1,0 +1,74 @@
+<!-- 
+    载入静态文件
+    使用 Django 3 学习的读者改为 {% load static %}
+-->
+{% load static %}
+
+<!DOCTYPE html>
+<!-- 网站主语言 -->
+<html lang="zh-cn">
+
+<head>
+    <!-- 网站采用的字符编码 -->
+    <meta charset="utf-8">
+    <!-- 预留网站标题的位置 -->
+    <title>二两酥肉的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/pygments.css' %}">
+</head>
+
+<body>
+    <!-- 引入导航栏 -->
+    {% include 'header.html' %}
+    <!-- body位置 -->
+    {% block content %}
+    {% endblock content %}
+
+    {% comment %} <div id="wrapper">
+        {% block content %}{% endblock content %}
+        <div id="push"></div>
+    </div> {% endcomment %}
+    {% comment %} 
+    <!-- 引入注脚 -->
+    {% include 'footer.html' %}  
+    {% endcomment %}
+
+    <!-- 增加样式 -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #wrapper {
+            width:100%;
+            float:left;
+            min-height: 94%;
+            {% comment %} height:100%; {% endcomment %}
+        }
+    </style>
+
+    <!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <link 
+      rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css"
+    >
+    <!-- 
+        popper.js 采用 cdn 远程引入，意思是你不需要把它下载到本地。
+        在实际的开发中推荐静态文件尽量都使用 cdn 的形式。 
+        教程采用本地引入是为了让读者了解静态文件本地部署的流程。
+    -->
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/2.11.4/cjs/popper.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/2.11.4/cjs/enums.min.js"></script>
+    <!-- 引入bootstrap的js文件 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
+    <!-- 在jquery后面引入 -->
+    {% comment %} {% include 'back_to_top_func.html' %} {% endcomment %}
+    
+</body>
+
+</html>

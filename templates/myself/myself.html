@@ -1,0 +1,87 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    首页
+{% endblock title %}
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/myself.css' %}">
+<style>
+    body{
+        background-image: url({{ seriesbg5.avatar }});
+    }
+  </style>
+<div class="body">
+    <div class='mainbox'>
+        <div style="width:100%;float:left">
+            <h1 id="h1">
+                About Me
+            </h1>
+        </div>
+            <div  class="box">
+                <span>
+                方向:
+                <br>
+                人工智能(吃饭本行)
+                <br>
+                硬件开发(存于理论)
+                <br>
+                游戏开发(仅仅是个爱好)
+                <br>
+                前端开发(断断续续，想起就弄)
+                <br>
+                <hr>
+                </div>
+            
+            <div  class="box">
+                爱好: 
+                <br>
+                骑行
+                古琴
+                口琴
+                画画
+                <br>
+                (以上爱好仅作参考，因为大多数没时间练习，忘得差不多了)
+                <hr>
+            </div>
+            
+            <div  class="box">
+                经历:
+                <br>
+                2022-现在:澳门大学 科技学院 数据科学 人工智能应用
+                <br>
+                2018-2022:四川农业大学 信息工程学院 计算机科学与技术
+                </span>
+            </div>
+            {% for friendlink in friendlinks %}
+                <a href="{{friendlink.url}}">
+                    <div class="LinkCard">
+                        <img src="{{friendlink.avatar }}" style="width:100%;height:auto">
+                        <span>{{friendlink.title}}</span>
+                        <br>
+                        <span>{{friendlink.name}}</span>
+                    </div>
+                </a>
+        {% endfor %}
+            
+
+
+    </div>
+    <div class='rightbox'>
+        <div style="margin-top:10%;float:left;width:100%">
+        <img src="https://s1.ax1x.com/2022/04/07/qztFuq.jpg" alt="" style="max-width:50%;height:auto;border-radius:50%"  /> 
+        </div>
+        <br>
+        <div id="name">
+        二两酥肉
+        </div>
+        <div id="word">
+            有诗和远方的苦逼程序员
+        </div>
+    </div>
+</div>
+        
+{% endblock content %}

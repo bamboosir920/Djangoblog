@@ -1,0 +1,152 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    首页
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/project_scholar_list.css' %}">
+<style>
+    body{
+      background-image: url({{ seriesbg4.avatar }});
+    }
+</style>
+<div class="body_box">
+<div class="body_head_box">
+  <!-- 新增，搜索栏 -->
+  <!-- 由于暂时没找到合适的美观替换，暂时取消掉排序 -->
+  {% comment %} 
+  <div class="body_head_select_box" >
+      <div class="body_head_select_order_box"id="body_head_select_order_box_1">
+        <a href="{% url 'life:life_list' %}?search={{ search }}&column={{ column }}&tag={{ tag }}">
+          最新
+        </a>
+      </div>
+      <div class="body_head_select_order_box" id="body_head_select_order_box_2">
+        <a href="{% url 'life:life_list' %}?search={{ search }}&column={{ column }}&tag={{ tag }}">
+          最热
+        </a>
+      </div>
+      <div  class="body_head_select_none_box">
+      </div>
+      <div class="body_head_select_search_box">
+          <form class="form-inline">
+            <label class="sr-only">content</label>
+            <input type="text" 
+                class="form-control mb-2 mr-sm-2" 
+                name="search" 
+                placeholder="搜索文章..." 
+                required
+            >
+            <button class="body_head_select_search_btn">~</button>
+          </form>
+        </div> 
+      </div> 
+    <!-- 新增，搜索提示语 -->
+  {% if search %}
+      {% if lifes %}
+          <h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
+          <hr>        
+      {% else %}
+          <h4>暂无<span style="color: red">"{{ search }}"</span>有关的文章。</h4>
+          <hr>
+      {% endif %}
+    {% endif %} 
+  {% endcomment %}
+</div>
+
+<div class="body_main_box">
+    {% for life in lifes %}
+        <a class="card" href="{% url 'life:life_detail' life.id %}">
+          <div class="front" 
+          {% if life.avatar %}
+            style="background-image: url({{ life.avatar }});" 
+          {% endif %}
+          >
+            <p>{{ life.title }}</p>
+          </div>
+          <div class="back">
+            <div>
+                {% if life.column %}
+                <button type="button" class="btn btn-sm mb-2">
+                    {{ life.column }}
+                </button>
+                {% endif %}
+                {% for tag in life.tags.all %}
+                <a href="{% url 'life:life_list' %}?tag={{ tag }}"class="badge badge-secondary">
+                    {{ tag }}
+                </a>
+                {% endfor %}
+                {{ life.body|slice:'150' }}...
+                <!-- 注脚 -->
+            <p>
+                <!-- 附加信息，增加了图标 -->
+                <span>
+                    <i class="fas fa-eye" style="color: lightskyblue;"></i>
+                    {{ life.total_views }}&nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <i class="fas fa-comments" style="color: yellowgreen;"></i>
+                    <!-- 修改为评论的计数 -->
+                    {{ life.comments.count }}&nbsp;&nbsp;&nbsp;
+                </span>
+                <span>
+                    <i class="fas fa-clock" style="color: pink;"></i>
+                    {{ life.created|date:'Y-m-d' }}
+                </span>
+            </p>
+              {% comment %} <button class="button">Click Here</button> {% endcomment %}
+            </div>
+          </div>
+        </a>
+    {% endfor %}
+</div>
+
+<!-- 页码导航 -->
+<div class="body_footer_box">
+    <div class="m-auto">
+        <span class="step-links">
+            <!-- 如果不是第一页，则显示上翻按钮 -->
+            {% if lifes.has_previous %}
+            <div class="step_link_box" id="step_link_box_1">
+              <a href="?page=1&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}" ><1</a>
+            </div>
+            <div  class="step_link_box">
+              <span style="font-size:20px;font-weight:500">...</span>
+            </div>
+            <div  class="step_link_box" id="step_link_box_2">
+              <a href="?page={{ lifes.previous_page_number }}&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}">
+                    {{ lifes.previous_page_number }}
+              </a>
+            </div>
+            {% endif %}
+
+            <!-- 当前页面 -->
+            <div class="step_link_box" id="step_link_box_3">
+            <span  class="step_link_box">
+                {{ lifes.number }}
+            </span>
+          </div>
+
+            <!-- 如果不是最末页，则显示下翻按钮 -->
+            {% if lifes.has_next %}
+            <div class="step_link_box" id="step_link_box_1">
+              <a href="?page={{ lifes.next_page_number }}&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}">{{ lifes.next_page_number }}</a>
+            </div>
+            <div  class="step_link_box">
+              <span style="font-size:20px;font-weight:500">...</span>
+            </div>
+            <div  class="step_link_box" id="step_link_box_2">
+              <a href="?page={{ lifes.paginator.num_pages }}&order={{ order }}&search={{ search }}&column={{ column }}&tag={{ tag }}">{{ lifes.paginator.num_pages }} ></a>
+            </div>
+            {% endif %}
+        </span>
+    </div>
+</div>
+</div>
+
+{% endblock content %}
