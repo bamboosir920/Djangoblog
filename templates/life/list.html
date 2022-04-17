@@ -71,7 +71,7 @@
           </div>
           <div class="back">
             <div>
-                {% if life.column %}
+<!--                 {% if life.column %}
                 <button type="button" class="btn btn-sm mb-2">
                     {{ life.column }}
                 </button>
@@ -80,7 +80,7 @@
                 <a href="{% url 'life:life_list' %}?tag={{ tag }}"class="badge badge-secondary">
                     {{ tag }}
                 </a>
-                {% endfor %}
+                {% endfor %} -->
                 {{ life.body|slice:'150' }}...
                 <!-- 注脚 -->
             <p>
