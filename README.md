@@ -1,7 +1,9 @@
 # Django搭建的个人博客
 ## 地址
 github:[Django-MyBlog](https://github.com/bamboosir920/Django-MyBlog)
+
 gitee:[Django-MyBlog](https://gitee.com/bamboosir920/django-myblog)
+
 希望可以的话，点一个star~
 ## 使用指南
 使用django3搭建的博客网站
