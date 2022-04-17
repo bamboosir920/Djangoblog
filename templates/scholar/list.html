@@ -71,7 +71,7 @@
           </div>
           <div class="back">
             <div>
-                {% if scholar.column %}
+<!--                 {% if scholar.column %}
                 <button type="button" class="btn btn-sm mb-2">
                     {{ scholar.column }}
                 </button>
@@ -80,7 +80,7 @@
                 <a href="{% url 'scholar:scholar_list' %}?tag={{ tag }}"class="badge badge-secondary">
                     {{ tag }}
                 </a>
-                {% endfor %}
+                {% endfor %} -->
                 {{ scholar.body|slice:'150' }}...
                 <!-- 注脚 -->
             <p>
