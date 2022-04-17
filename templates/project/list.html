@@ -71,7 +71,7 @@
           </div>
           <div class="back">
             <div>
-                {% if project.column %}
+<!--                 {% if project.column %}
                 <button type="button" class="btn btn-sm mb-2">
                     {{ project.column }}
                 </button>
@@ -80,7 +80,7 @@
                 <a href="{% url 'project:project_list' %}?tag={{ tag }}"class="badge badge-secondary">
                     {{ tag }}
                 </a>
-                {% endfor %}
+                {% endfor %} -->
                 {{ project.body|slice:'150' }}...
                 <!-- 注脚 -->
             <p>
