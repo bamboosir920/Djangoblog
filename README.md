@@ -1,4 +1,8 @@
 # Django搭建的个人博客
+## 地址
+github:[Django-MyBlog](https://github.com/bamboosir920/Django-MyBlog)
+gitee:[Django-MyBlog](https://gitee.com/bamboosir920/django-myblog)
+希望可以的话，点一个star~
 ## 使用指南
 使用django3搭建的博客网站
 ### 关于环境
@@ -75,7 +79,6 @@ git pull --rebase origin master
 <img src="https://img-blog.csdnimg.cn/cc652da6b2254c2fa565f8928ecdb758.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LqM5Lik6YWl6IKJ,size_20,color_FFFFFF,t_70,g_se,x_16" width="80%">
 
 <img src="https://img-blog.csdnimg.cn/07a3e4db19764edfb12ce6ed28949a4e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LqM5Lik6YWl6IKJ,size_20,color_FFFFFF,t_70,g_se,x_16" width="80%">
-
 ### 分区页
 <img src="https://img-blog.csdnimg.cn/edea52b106484340ae64a242800f53c3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LqM5Lik6YWl6IKJ,size_20,color_FFFFFF,t_70,g_se,x_16" width="80%">
 
@@ -90,7 +93,6 @@ git pull --rebase origin master
 <img src="https://img-blog.csdnimg.cn/1c669d598b6746e2a51ce192e582c210.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LqM5Lik6YWl6IKJ,size_20,color_FFFFFF,t_70,g_se,x_16" width="80%">
 
 <img src="https://img-blog.csdnimg.cn/d333f19af23d4b3b82b6a119bdac36d1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5LqM5Lik6YWl6IKJ,size_20,color_FFFFFF,t_70,g_se,x_16" width="80%">
-
 ### 自适应
 基本完成了自适应
 
